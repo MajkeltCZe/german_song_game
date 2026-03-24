@@ -1,0 +1,40 @@
+body {
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+    }
+
+    .game-container {
+      margin-top: 50px;
+      padding: 30px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .lyrics {
+      font-size: 1.5rem;
+      margin: 20px 0;
+    }
+
+    .word {
+      cursor: pointer;
+      padding: 5px 10px;
+      margin: 5px;
+      display: inline-block;
+      border-radius: 10px;
+      background-color: #e0f7fa;
+      transition: 0.3s;
+    }
+
+    .word:hover {
+      background-color: #80deea;
+    }
+
+    .mode-btn {
+      margin: 10px;
+    }
+
+    .hidden {
+      display: none;
+    }
