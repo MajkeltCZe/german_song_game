@@ -1,36 +1,90 @@
 console.log("funguje");
 
-let audio =  document.getElementById("song")
-let  currentTime = audio.currentTime;
+const audio =  document.getElementById("song")
 const lyricsDiv = document.getElementById("lyrics-div");
+const progress = document.getElementById("progress");
+const playBtn = document.getElementById("playBtn");
+const volumeIcon = document.getElementById("volumeIcon");
+const volumeSlider = document.getElementById("volume");
+let currentTime;
 
 
-
-
-audio.addEventListener("play", () => {
-  if (!animationId) {
-    updateLyrics();
-  }
-});
-
-audio.addEventListener("pause", () => {
-  cancelAnimationFrame(animationId);
-  animationId = null;
-});
 
 
 let animationId = null;
 function updateLyrics() {
-  const currentTime = audio.currentTime;
-  const activeSubtitle = lyrics.find(lyr => currentTime >= lyr.start && currentTime <= lyr.end);
-  lyricsDiv.innerHTML = activeSubtitle ? activeSubtitle.text : '';
+  currentTime = audio.currentTime;
+  lyricsDiv.innerHTML = '';
+  console.log(currentTime);
+  for (const line of lyrics) {
+    if (currentTime >= line.start && currentTime <= line.end) {
+      const lineDiv = document.createElement('div');
+
+      line.words.forEach(word => {
+        const span = document.createElement('span');
+        span.classList.add('word-container');
+
+if (word.img) {
+  const img = document.createElement('img');
+  img.src = word.img;
+  span.appendChild(img);
+}
+
+const text = document.createElement('span');
+text.textContent = word.text;
+span.appendChild(text);
+
+if (currentTime >= word.start && currentTime <= word.end) {
+  span.classList.add('word-active');
+}
+
+        lineDiv.appendChild(span);
+      });
+
+      lyricsDiv.appendChild(lineDiv);
+    }
+  }
 
   if (!audio.paused) {
     animationId = requestAnimationFrame(updateLyrics);
   }
+    
 }
 
 
+playBtn.addEventListener("click", () => {
+  if (audio.paused) {
+    audio.play();
+    playBtn.textContent = "⏸";
+if (!animationId) {
+    updateLyrics();
+  }
 
+  } else {
+    cancelAnimationFrame(animationId);
+    animationId = null;
+    audio.pause();
+    playBtn.textContent = "▶";
+  }
+});
+audio.addEventListener("timeupdate", () => {
+  progress.value = (audio.currentTime / audio.duration) * 100;
+});
 
+progress.addEventListener("input", () => {
+  audio.currentTime = (progress.value / 100) * audio.duration;
+});
 
+document.getElementById("volume").addEventListener("input", (e) => {
+  audio.volume = e.target.value;
+});
+
+volumeIcon.addEventListener("click", () => {
+  volumeSlider.style.display =
+    volumeSlider.style.display === "inline-block" ? "none" : "inline-block";
+});
+
+// volume control
+volumeSlider.addEventListener("input", (e) => {
+  audio.volume = e.target.value;
+});
