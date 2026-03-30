@@ -1,6 +1,6 @@
 body {
       background: linear-gradient(135deg, #ffecd2, #fcb69f);
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       text-align: center;
       margin: 0;
 
@@ -13,16 +13,8 @@ body {
       border-bottom: #ffecd2 solid 15px;
     }
 
-  
 
-  .btn {
-size:50cm !important;
-    }
-  
 
-    .col {
-max-height: 600px !important;
-    }
 
 .lyrics-div {
    width: 100%;
@@ -40,14 +32,18 @@ max-height: 600px !important;
   flex-direction: column;
   align-items: center;
   margin: 0 8px;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
     
 }
+
+
 
 .word-container img {
   width: 60px;
   margin-bottom: 4px;
 }
+
+
 
 .word-active {
   color: orange;
@@ -74,4 +70,11 @@ max-height: 600px !important;
 .hidden-volume {
   display: none;
   width: 70%;
+}
+
+
+@media screen and (max-width: 600px) {
+ .word-container {
+   font-size: 1.2rem;
+ }
 }
