@@ -20,22 +20,20 @@
       <h1> Stampf und Klatsch Spiel</h1>
 
     </header>
-<main class="mt-5 p-5 bg-white container   justify-content-center align-intems-center game-container">
- <div class="row w-100 h-100  justify-content-center">
+<main class="mt-5 p-5 bg-white container justify-content-center align-intems-center game-container">
+ <div class="row w-100 h-100">
+  <div class="col-4 d-flex align-items-center gap-2">
     
-    <div class="col-5 d-flex mb-3 mb-sm-0">
-          <span id="settings" title="nastavení"><i class="bi bi-gear-fill mr-2"></i></span>
-      <span id="volumeIcon"><i class="bi bi-volume-down"></i></span>
-      <input type="range" id="volume" min="0" max="1" step="0.1" class="hidden-volume">
-    </div>
-  <div class="col-7 d-flex mb-3 mb-sm-0">
-          <span><a href="index.html"> <button class="btn btn-primary btn-lg mode-btn hidden" id="main">hlavní stránka</button></a></span>
+    <a href="index.html" title="domovská stránka">
+      <i class="bi bi-house-door-fill"></i>
+    </a>
+    <span id="volumeIcon" title="nastavení hlasitosti">
+      <i class="bi bi-volume-down"></i>
+    </span>
+    <input type="range" id="volume" min="0" max="1" step="0.1" class="hidden-volume">
+
+  </div>
 </div>
-
-
-</div>
-
-
 <div class="row d-flex justify-content-center">
  <div class="col-md-12">
   <audio id="song">
@@ -50,26 +48,21 @@
 </div>
 <div class="row d-flex justify-content-center">
   <div class="col-md-7 d-flex align-items-center">
-
-
   </div>
 </div>
-
 <div class="row w-100 h-100 p-5 justify-content-center">
-    <div class="col-6 col-sm-6 col-md-4 d-flex justify-content-center mb-3 mb-sm-0">
+    <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center mb-3 mb-sm-0">
      <div id="buttons" class="hidden">
-      <button class="btn btn-primary btn-lg mode-btn mr-2" id="stampf">Stampf</button>
+      <button class="btn btn-primary btn-lg mode-btn gap-2" id="stampf">Stampf</button>
      <button class="btn btn-primary btn-lg mode-btn" id="klatsch">Klatsch</button>
    </div>
     </div>
     </div>
-
-
 </main>
 
 
 <script src="js/lyrics.js"></script>
-<script src="js/main.js"></script>
+<script src="js/game.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

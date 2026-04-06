@@ -8,7 +8,8 @@
 
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
       
@@ -18,14 +19,10 @@
 
     </header>
 <main class="mt-5 p-5 bg-white container   justify-content-center align-intems-center game-container">
-  <div class="row w-100 h-100 p-5 justify-content-center">
-    
-    <div class="col-6 col-sm-6 col-md-4 d-flex justify-content-center mb-3 mb-sm-0">
-       <a href="#"> <button class="btn btn-primary btn-lg mode-btn">Tančící mód</button></a>
-</div>
+  <div class="row w-100 h-100">
+    <div class="col-12 col-sm-6 col-md-6 d-flex">
+             <a href="index.html">  <span title="domovská stránka"><i class="bi bi-house-door-fill"></i></i></span></a>
 
-    <div class="col-6 col-sm-6 col-md-4 d-flex justify-content-center">
-       <a href="mode2.html"> <button class="btn btn-success btn-lg mode-btn">Cvičící mód</button></a>
     </div>
 </div>
 
@@ -47,10 +44,10 @@
      </div>
      
 <div class="row d-flex justify-content-center">
-  <div class="col-md-7 d-flex align-items-center">
+  <div class="col-md-7  col-sm-12 d-flex align-items-center">
     <button id="playBtn" class="mr-2">▶</button>
     <div class="volume-container d-flex align-items-center position-relative">
-      <span id="volumeIcon">🔊</span>
+      <span id="volumeIcon" title="nastavení hlasitosti"><i class="bi bi-volume-down"></i></span>
       <input type="range" id="volume" min="0" max="1" step="0.1" class="hidden-volume">
     </div>
   </div>
@@ -59,7 +56,7 @@
 
 
 <script src="js/lyrics.js"></script>
-<script src="js/main.js"></script>
+<script src="js/dance.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

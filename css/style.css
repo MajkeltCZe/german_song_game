@@ -23,8 +23,15 @@ body {
   position: relative;
 
   display: flex;
+  flex-direction: column;      
   align-items: center;
   justify-content: center;
+}
+
+#final-score {
+  position: static;
+  margin-top: 10px;        
+  font-size: 1.5rem;
 }
 
   .word-container {
@@ -59,7 +66,6 @@ body {
 #volumeIcon {
   cursor: pointer;
   font-size: 250%;
-  display: none;
 }
 
 #volumeIcon:hover {
@@ -68,7 +74,7 @@ body {
 
 .hidden-volume {
   display: none;
-  width: 30%;
+  width: 50%;
 }
 
 .hidden {
@@ -76,10 +82,16 @@ display: none;
 
 }
 
-#final-score {
-  top: 60%;
-  font-size: 1.5rem;
+.bi-house-door-fill {
+font-size: 150%;
+color: black;
 }
+
+.bi-house-door-fill:hover {
+color:  #0d6efd;
+}
+
+
 
 @media screen and (max-width: 600px) {
  .word-container {
@@ -87,12 +99,9 @@ display: none;
  }
 }
 
-#settings {
-  font-size: 150%;
-  cursor: pointer;
-
+@media screen and (max-width: 600px) {
+ #volume {
+width: 110px !important;
+}
 }
 
-#settings:hover {
-color:  #0d6efd;
-}

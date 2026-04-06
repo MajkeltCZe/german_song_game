@@ -996,24 +996,21 @@ const lyrics = [
                 "start": 82.0,
                 "end": 82.4,
                 "text": "Stampf,",
-                "img": "media/stampf.png",
-                "btn": "stampf"
+                "img": "media/stampf.png"
 
             },
             {
                 "start": 82.4,
                 "end": 82.8,
                 "text": "stampf,",
-                  "img": "media/stampf.png",
-                  "btn": "stampf"
+                  "img": "media/stampf.png"
 
             },
             {
                 "start": 82.8,
                 "end": 83.0,
                 "text": "klatsch!",
-                "img": "media/klatsch.png",
-                 "btn": "klatsch"
+                "img": "media/klatsch.png"
             },
           
         ]
@@ -1026,21 +1023,24 @@ const lyrics = [
                 "start": 83.3,
                 "end": 83.7,
                 "text": "Stampf,",
-                   "img": "media/stampf.png"
+                   "img": "media/stampf.png",
+                   "btn": "stampf"
 
             },
             {
                 "start": 83.7,
                 "end": 84.0,
                 "text": "stampf,",
-                  "img": "media/stampf.png"
+                  "img": "media/stampf.png",
+                  "btn": "stampf"
 
             },
             {
                 "start": 84.0,
                 "end": 84.3,
                 "text": "klatsch!",
-                "img": "media/klatsch.png"
+                "img": "media/klatsch.png",
+                "btn": "klatsch"
             },
           
         ]
@@ -1109,23 +1109,20 @@ const lyrics = [
                 "start": 87.5,
                 "end": 88.0,
                 "text": "Klatsch,",
-                "img": "media/klatsch.png",
-                "btn": "klatsch"               
+                "img": "media/klatsch.png"
             },
 
             {
                 "start": 88.0,
                 "end": 88.5,
                 "text": "klatsch,",
-                "img": "media/klatsch.png",
-                "btn": "klatsch"  
+                "img": "media/klatsch.png"
             },
             {
                 "start": 88.5,
                 "end": 88.8,
                 "text": "stampf.",
-                 "img": "media/stampf.png",
-                 "btn": "stampf"
+                 "img": "media/stampf.png"
 
             },
            
@@ -1140,20 +1137,24 @@ const lyrics = [
                 "start": 89.0,
                 "end": 89.5,
                 "text": "Klatsch,",
-                "img": "media/klatsch.png"
+                "img": "media/klatsch.png",
+                "btn": "klatsch"
 
             },
             {
                 "start": 89.5,
                 "end": 89.8,
                 "text": "klatsch,",
-                "img": "media/klatsch.png"
+                "img": "media/klatsch.png",
+                 "btn": "klatsch"
+
             },
             {
                 "start": 89.8,
                 "end": 90.1,
                 "text": "stampf!",
-                "img": "media/stampf.png"
+                "img": "media/stampf.png",
+                "btn": "stampf"
             },
           
 ]
@@ -1210,7 +1211,6 @@ const lyrics = [
                 "end": 92.8,
                 "text": "klatsch.",
                 "img": "media/klatsch.png",
-                "btn": "klatsch"  
             },
             
         ]
@@ -1235,7 +1235,6 @@ const lyrics = [
                 "end": 94.5,
                 "text": "klatsch!",
                 "img": "media/klatsch.png",
-                "btn": "klatsch"  
             }
         ]
     },
@@ -1468,8 +1467,7 @@ const lyrics = [
                 "start": 109.0,
                 "end": 109.5,
                 "text": "Stampf",
-                "img": "media/stampf.png",
-                "btn": "stampf"  
+                "img": "media/stampf.png"
             },
             {
                 "start": 109.5,
