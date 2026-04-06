@@ -14,14 +14,14 @@ body {
     }
 
 
-
-
 .lyrics-div {
    width: 100%;
 }
 
 .lyrics-wrapper {
   height: 180px; 
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,26 +58,41 @@ body {
 
 #volumeIcon {
   cursor: pointer;
-  font-size: 20px;
+  font-size: 250%;
+  display: none;
 }
 
 #volumeIcon:hover {
-  font-size: 22px;
+  color:  #0d6efd;
 }
 
 .hidden-volume {
   display: none;
-  width: 70%;
+  width: 30%;
 }
 
 .hidden {
-display: block;
+display: none;
 
 }
 
+#final-score {
+  top: 60%;
+  font-size: 1.5rem;
+}
 
 @media screen and (max-width: 600px) {
  .word-container {
    font-size: 1.2rem;
  }
+}
+
+#settings {
+  font-size: 150%;
+  cursor: pointer;
+
+}
+
+#settings:hover {
+color:  #0d6efd;
 }
