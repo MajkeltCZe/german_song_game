@@ -78,7 +78,7 @@ body {
 }
 
 .hidden {
-display: none;
+display: none !important;
 
 }
 
@@ -95,13 +95,30 @@ color:  #0d6efd;
 
 @media screen and (max-width: 600px) {
  .word-container {
-   font-size: 1.2rem;
+   font-size: 1.4rem;
  }
-}
+ .mode-btn {
+    flex: 1 1 auto !important;          
+  min-width: 120px !important;        
+  font-size: 1.4rem !important; 
 
-@media screen and (max-width: 600px) {
+  }
  #volume {
 width: 110px !important;
 }
+
 }
 
+
+@media screen and (max-width: 576px){
+ .mode-btn,#restart {
+  min-width: 140px !important;
+    font-size: 1.4rem !important;
+    padding: 0.8rem 1.1rem !important;
+ }
+ #buttons {
+  gap: 10px;   
+  flex-wrap: nowrap; 
+ }
+  
+}
