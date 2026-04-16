@@ -6,6 +6,8 @@ const playBtn = document.getElementById("playBtn");
 const volumeIcon = document.getElementById("volumeIcon");
 const volumeSlider = document.getElementById("volume");
 
+
+
 let animationId;
 function updateLyrics() {
   const currentTime = audio.currentTime;
