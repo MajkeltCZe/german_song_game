@@ -8,11 +8,9 @@ const finalScore = document.getElementById("final-score");
 const btns = document.getElementById("buttons");
 const volumeIcon = document.getElementById("volumeIcon");
 const volumeSlider = document.getElementById("volume");
-const btnEasy = document.getElementById("easy");
-const btnHard = document.getElementById("hard");
-const difficultySettings = document.getElementById("difficulty");
+const clockIcon = document.getElementById("clockIcon");
+const playbackSlider = document.getElementById("playbackSlider");
 
-let gamemode;
 let currentWord = null;
 let animationId;
 let score = 0;
@@ -34,21 +32,12 @@ function restartGame() {
   updateLyrics();
 }
 
-function correctWord(word, gamemode) {
-  if (gamemode === "hard") {
+function correctWord(word) {
     if (word.img) { 
       if (word.img.includes("stampf")) return "stampf";
       if (word.img.includes("klatsch")) return "klatsch";
     }
     return null;
-  }
-
-  else if (gamemode === "easy") {
-    if (word.btn) {
-      return word.btn;
-    }
-    return null;
-  }
 }
 
 function updateLyrics() {
@@ -71,13 +60,13 @@ function updateLyrics() {
 
         const text = document.createElement('span');
 
-        if ((word.btn && gamemode == "easy") || (word.img && gamemode == "hard")) {
+        if (word.img) {
           if (!word.solved) {
             text.textContent = '___';
 
             if (currentTime >= word.start && currentTime <= word.end) {
               currentWord = {
-                correct: correctWord(word,gamemode),
+                correct: correctWord(word),
                 element: text,
                 fullText: word.text,
                 wordRef: word,
@@ -140,11 +129,9 @@ function handleAnswer(choice, button) {
 
   if (choice === currentWord.correct) {
     button.classList.add("btn-success");
-
     currentWord.element.textContent = currentWord.fullText;
     currentWord.wordRef.solved = true;
     currentWord = null;
-
     score++;
 
     setTimeout(() => {
@@ -167,29 +154,24 @@ audio.addEventListener("ended", () => {
   finalScore.textContent = "Dosažené skóre: " + score;
   finalScore.classList.remove("hidden");
   btns.classList.add("hidden");
-  difficultySettings.classList.remove("hidden");
 });
 
 // play / restart button
 btnRestart.addEventListener("click", () => {
   if (btnRestart.textContent.includes("▶")) {
     audio.currentTime = 11;
-   if(gamemode == "easy") audio.playbackRate=0.85;
     audio.play();
-
     btnRestart.classList.add("hidden");
     lyricsDiv.classList.remove("hidden");
     btns.classList.remove("hidden");
    volumeIcon.classList.remove("hidden");
-
-
+    clockIcon.classList.remove("hidden");
     updateLyrics();
-  } else {
-    restartGame();
-  }
+  } else  restartGame();
+
 });
 
-// volume + settings
+// volume slider
 volumeSlider.addEventListener("input", (e) => {
   audio.volume = e.target.value;
 });
@@ -199,16 +181,14 @@ volumeIcon.addEventListener("click", () => {
     volumeSlider.style.display === "inline-block" ? "none" : "inline-block";
 });
 
-//difficulty buttons
-btnEasy.addEventListener("click", () => {
-  gamemode = 'easy';
-  btnRestart.classList.remove("hidden");
-  difficultySettings.classList.add("hidden");
 
+// playback slider
+playbackSlider.addEventListener("input", (e) => {
+  audio.playbackRate = e.target.value;
 });
 
-btnHard.addEventListener("click", () => {
-  gamemode = 'hard';
-  btnRestart.classList.remove("hidden");
-   difficultySettings.classList.add("hidden");
+clockIcon.addEventListener("click", () => {
+  playbackSlider.style.display =
+    playbackSlider.style.display === "inline-block" ? "none" : "inline-block";
 });
+

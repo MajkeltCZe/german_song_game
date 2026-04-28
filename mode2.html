@@ -31,22 +31,12 @@
       <i class="bi bi-volume-down"></i>
     </span>
     <input type="range" id="volume" min="0" max="1" step="0.1" class="hidden-volume">
+    <span id="clockIcon" title="nastavení rychlosti" class="hidden">
+     <i class="bi bi-clock-history"></i>
+    </span>
+    <input type="range" id="playbackSlider" min="0.2" max="1.5" step="0.1" class="hidden-volume">
 
   </div>
-</div>
-<div id="difficulty">
-<div class="row w-100 p-3 justify-content-center">
-  <div class="col-12 col-md-4 d-flex flex-column align-items-center mb-4">
-    <button class="btn btn-success mode-btn mb-2" id="easy">   Jednoduchá  </button>
-    <p class="text-center">   Úkolem je zmáčknout včas jen některé "Stampf" / "Klatsch". Písnička hraje pomaleji.  </p>
-  </div>
-  <div class="col-12 col-md-4 d-flex flex-column align-items-center mb-4">
-    <button class="btn btn-primary mode-btn mb-2" id="hard">      Obtížnější  </button>
-    <p class="text-center"> Úkolem je zmáčknout včas každé "Stampf" / "Klatsch".</p>
-  </div>
-
-</div>
-<hr>
 </div>
 <div class="row d-flex justify-content-center">
  <div class="col-md-12">
@@ -54,7 +44,7 @@
   <source src="media/song.wav" type="audio/mpeg">
 </audio>
 <div class="lyrics-wrapper">
-  <button id="restart" class="btn btn-success btn-lg hidden"> ▶ Hrát </button>
+  <button id="restart" class="btn btn-success btn-lg"> ▶ Hrát </button>
   <div id="lyrics-div" class="hidden"></div>
   <div id="final-score" class="hidden"></div>
 </div> 

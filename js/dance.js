@@ -6,7 +6,8 @@ const playBtn = document.getElementById("playBtn");
 const volumeIcon = document.getElementById("volumeIcon");
 const volumeSlider = document.getElementById("volume");
 
-
+audio.playbackRate = 1.5;
+audio.currentTime = 15;
 
 let animationId;
 function updateLyrics() {
@@ -31,10 +32,8 @@ function updateLyrics() {
         text.textContent = word.text;
         span.appendChild(text);
 
-        // karaoke highlight
-        if (currentTime >= word.start && currentTime <= word.end) {
-          span.classList.add('word-active');
-        }
+        if (currentTime >= word.start && currentTime <= word.end) span.classList.add('word-active');
+        
 
         lineDiv.appendChild(span);
       });
@@ -45,6 +44,7 @@ function updateLyrics() {
 
   if (!audio.paused) {
     animationId = requestAnimationFrame(updateLyrics);
+    console.log(currentTime);
   }
 }
 
@@ -62,7 +62,7 @@ playBtn.addEventListener("click", () => {
   }
 });
 
-// progress bar
+
 audio.addEventListener("timeupdate", () => {
   progress.value = (audio.currentTime / audio.duration) * 100;
 });
@@ -71,7 +71,6 @@ progress.addEventListener("input", () => {
   audio.currentTime = (progress.value / 100) * audio.duration;
 });
 
-// volume
 volumeSlider.addEventListener("input", (e) => {
   audio.volume = e.target.value;
 });
