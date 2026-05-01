@@ -10,10 +10,34 @@ const volumeIcon = document.getElementById("volumeIcon");
 const volumeSlider = document.getElementById("volume");
 const clockIcon = document.getElementById("clockIcon");
 const playbackSlider = document.getElementById("playbackSlider");
+const tutorialDiv = document.getElementById("tutorial-div");
+const btnTutorial = document.getElementById("tutorial");
+const nextTutorial = document.getElementById("nextPage");
+const InstructionTutorial = document.getElementById("tutorialInstruction");
+const endTutorial = document.getElementById("cancelTutorial");
+
+
+let imgText = document.getElementsByClassName("text_tutorial");
+let imagesTutorial = document.getElementsByClassName("img");
+
 
 let currentWord = null;
 let animationId;
 let score = 0;
+let practise = false;
+let currentPractice = null;
+
+
+const sounds = {
+  stampf: new Audio("media/stampf.ogg"),
+  klatsch: new Audio("media/klatsch.ogg")
+};
+
+const feedbackSounds = {
+  correct: new Audio("media/correct.mp3"),
+  wrong: new Audio("media/wrong.mp3")
+};
+
 
 function restartGame() {
   score = 0;
@@ -158,7 +182,10 @@ audio.addEventListener("ended", () => {
 
 // play / restart button
 btnRestart.addEventListener("click", () => {
+  
   if (btnRestart.textContent.includes("▶")) {
+  btnTutorial.classList.add("hidden");
+
     audio.currentTime = 11;
     audio.play();
     btnRestart.classList.add("hidden");
@@ -192,3 +219,104 @@ clockIcon.addEventListener("click", () => {
     playbackSlider.style.display === "inline-block" ? "none" : "inline-block";
 });
 
+
+nextTutorial.addEventListener("click", () => {
+if (!practise) {
+  nextTutorial.classList.add("bi-arrow-left-short");
+    nextTutorial.classList.remove("bi-arrow-right-short");
+    btnTutorial.classList.remove("hidden");
+    InstructionTutorial.classList.remove("hidden");
+    btnTutorial.textContent = "🔊 Přehrát zvuk";
+
+for (let i = 0; i < imgText.length; i++) {
+let text = imgText[i];
+let img = imagesTutorial[i];
+  text.classList.add("hidden");
+  img.classList.add("interactible");
+}
+  practise = true;
+
+} else {
+    nextTutorial.classList.add("bi-arrow-right-short");
+  nextTutorial.classList.remove("bi-arrow-left-short");
+  btnTutorial.classList.add("hidden");
+    InstructionTutorial.classList.add("hidden");
+
+for (let i = 0; i < imgText.length; i++) {
+let text = imgText[i];
+let img = imagesTutorial[i];
+
+  text.classList.remove("hidden");
+  img.classList.remove("interactible");
+}
+practise = false;
+}
+});
+
+btnTutorial.addEventListener("click", () => {
+ if (!practise) {
+    tutorialDiv.classList.remove("hidden");
+    btnTutorial.classList.add("hidden");
+    btnRestart.classList.add("hidden");
+    endTutorial.classList.remove("hidden");
+    return;
+  }
+  if (currentPractice === null) {
+    const options = ["stampf", "klatsch"];
+    currentPractice = options[Math.floor(Math.random() * options.length)];
+  }
+
+  sounds[currentPractice].currentTime = 0;
+  sounds[currentPractice].play();
+
+});
+
+
+Array.from(imagesTutorial).forEach(img => {
+  img.addEventListener("click", () => {
+
+  if (!practise || !currentPractice) return;
+
+  const chosen = img.alt.toLowerCase();
+
+  if (chosen === currentPractice) {
+   console.log("correct");
+   img.classList.add("bg-success");
+    currentPractice = null;
+    feedbackSounds.correct.currentTime = 0;
+    feedbackSounds.correct.play();
+
+  } else {
+   img.classList.add("bg-danger");
+      feedbackSounds.wrong.currentTime = 0;
+    feedbackSounds.wrong.play();
+
+  }
+
+  setTimeout(() => {
+    img.classList.remove("bg-danger", "bg-success");
+  }, 300);
+
+});
+});
+
+
+endTutorial.addEventListener("click", () => {
+  practise = false;
+  currentPractice = null;
+tutorialDiv.classList.add("hidden");
+btnRestart.classList.remove("hidden");
+InstructionTutorial.classList.add("hidden");
+btnTutorial.classList.remove("hidden");
+btnTutorial.textContent = "Procvičení slov";
+endTutorial.classList.add("hidden");
+nextTutorial.classList.add("bi-arrow-right-short");
+  nextTutorial.classList.remove("bi-arrow-left-short");
+for (let i = 0; i < imgText.length; i++) {
+let text = imgText[i];
+let img = imagesTutorial[i];
+  text.classList.remove("hidden");
+  img.classList.remove("interactible");
+}
+
+});

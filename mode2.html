@@ -24,20 +24,39 @@
  <div class="row w-100 h-100">
   <div class="col-4 d-flex align-items-center gap-2">
     
-    <a href="index.html" title="domovská stránka">
-      <i class="bi bi-house-door-fill"></i>
-    </a>
-    <span id="volumeIcon" title="nastavení hlasitosti" class="hidden">
-      <i class="bi bi-volume-down"></i>
-    </span>
+    <a href="index.html" title="domovská stránka">  <i class="bi bi-house-door-fill"></i> </a>
+    <i class="bi bi-x-circle hidden ml-2" title="Vypnout cvičící režim" id="cancelTutorial"></i>
+    <span id="volumeIcon" title="nastavení hlasitosti" class="hidden">  <i class="bi bi-volume-down"></i> </span>
     <input type="range" id="volume" min="0" max="1" step="0.1" class="hidden-volume">
-    <span id="clockIcon" title="nastavení rychlosti" class="hidden">
-     <i class="bi bi-clock-history"></i>
-    </span>
+    <span id="clockIcon" title="nastavení rychlosti" class="hidden">  <i class="bi bi-clock-history"></i> </span>
     <input type="range" id="playbackSlider" min="0.2" max="1.5" step="0.1" class="hidden-volume">
-
+ 
   </div>
 </div>
+
+  <button id="tutorial" class="btn btn-success btn-lg mb-5"> Procvičení slov</button>
+<p id="tutorialInstruction" class="hidden">Zkus vybrat správný obrázek ke slovu, které uslyšíš po zmáčknutí tlačítka</p>
+  
+ <div id="tutorial-div" class="hidden">
+  <div class="row w-200 mt-5">
+  <div class="col-sm-6">
+    <img  class="img mx-auto"  src="media/klatsch.png" alt="klatsch">
+<p class="text_tutorial">Klatsch</p>
+  </div>
+  <div class="col-sm-6">
+    <img  class="img mx-auto"  src="media/stampf.png" alt="stampf">
+<p class="text_tutorial">Stampf</p>
+  </div>
+</div>
+  <div id="tutorial" class="row">
+    <div class=" offset-lg-11"></div>
+<i class="bi bi-arrow-right-short" id="nextPage" title="další stranka"></i>
+</div>
+</div>
+<div>
+
+
+
 <div class="row d-flex justify-content-center">
  <div class="col-md-12">
   <audio id="song">
@@ -57,7 +76,8 @@
 <div class="row w-100 h-100 p-5 justify-content-center">
     <div class="col-12 col-sm-12 col-md-4 d-flex justify-content-center mb-3 mb-sm-0">
   <div id="buttons" class="d-flex gap-2 hidden">
-  <button class="btn btn-primary btn-lg mode-btn d-flex align-items-center mr-3" id="stampf"> <img src="media/stampf_icon.png" alt="stampf" class="btn-icon"> <span>Stampf</span> </button>
+  <button class="btn btn-primary btn-lg mode-btn d-flex align-items-center mr-3" id="stampf"> 
+    <img src="media/stampf_icon.png" alt="stampf" class="btn-icon"> <span>Stampf</span> </button>
 
   <button class="btn btn-primary btn-lg mode-btn d-flex align-items-center" id="klatsch">
     <img src="media/klatsch_icon.png" alt="klatsch" class="btn-icon"> <span>Klatsch</span> </button>
