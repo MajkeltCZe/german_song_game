@@ -147,7 +147,6 @@ width: 32% !important;
 
 
 
-
 @media screen and (max-width: 800px) {
 
 .img {
@@ -168,7 +167,7 @@ width: 37% !important;
  }
  .mode-btn {
     flex: 1 1 auto !important;          
-  min-width: 120px !important;        
+  min-width: 100px !important;        
   font-size: 1.5rem !important; 
 
   }
@@ -188,12 +187,11 @@ width: 40% !important;
 
 @media screen and (max-width: 576px){
  .mode-btn,#restart {
-  min-width: 140px !important;
     font-size: 1.4rem !important;
     padding: 0.8rem 1.1rem !important;
  }
  #buttons {
-  gap: 10px;   
+  gap: 5px;   
   flex-wrap: nowrap; 
  }
   

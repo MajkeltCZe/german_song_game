@@ -178,6 +178,8 @@ audio.addEventListener("ended", () => {
   finalScore.textContent = "Dosažené skóre: " + score;
   finalScore.classList.remove("hidden");
   btns.classList.add("hidden");
+  btnRestart.classList.remove("hidden");
+  btnRestart.textContent = "Restart";
 });
 
 // play / restart button
