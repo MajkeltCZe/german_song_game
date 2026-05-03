@@ -165,11 +165,13 @@ width: 37% !important;
  .word-container {
    font-size: 1.4rem;
  }
- .mode-btn {
-    flex: 1 1 auto !important;          
-  min-width: 100px !important;        
-  font-size: 1.5rem !important; 
+  .mode-btn {
+    flex: 1 1 0;        
+    min-width: 0;       
+    font-size: 1.1rem;
+    padding: 0.7rem;
 
+    gap: 6px;
   }
  input {
 width: 110px !important;
@@ -192,7 +194,6 @@ width: 40% !important;
  }
  #buttons {
   gap: 5px;   
-  flex-wrap: nowrap; 
  }
   
 }
