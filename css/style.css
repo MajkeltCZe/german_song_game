@@ -189,12 +189,21 @@ width: 40% !important;
 
 @media screen and (max-width: 576px){
  .mode-btn,#restart {
-    font-size: 1.4rem !important;
-    padding: 0.8rem 1.1rem !important;
+    font-size: 1.25rem !important;
  }
  #buttons {
-  gap: 5px;   
+  gap: 3px;   
  }
   
 }
 
+@media screen and (max-width: 340px){
+ .mode-btn,#restart {
+    font-size: 1rem !important;
+ min-width: 80px;
+  }
+  #buttons {
+  gap: 2px !important;   
+ }
+  
+}
